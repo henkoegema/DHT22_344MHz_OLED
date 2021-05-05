@@ -43,7 +43,7 @@ void setup()
     // Setup Serial Monitor
     Serial.begin(9600);
 
-    display.begin(SSD1306_SWITCHCAPVCC,0x3C);  // Address 0x3C for 128x32
+    display.begin(SSD1306_SWITCHCAPVCC,0x3C);  // Address 0x3C for 128x64
     display.clearDisplay(); // Clear display buffer
     display.setTextSize(1);
     display.setTextColor(WHITE);
