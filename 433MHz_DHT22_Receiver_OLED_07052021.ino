@@ -93,6 +93,5 @@ void loop()
       display.println();     
       display.display();
       
-      delay(2000);        
     }
 }
