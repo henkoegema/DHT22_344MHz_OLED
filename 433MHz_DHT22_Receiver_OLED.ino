@@ -30,6 +30,14 @@ SSD1306AsciiAvrI2c oled;
 String str_humid;
 String str_temp;
 String str_out;
+String humid0;;
+String humid1;
+String humid2;
+String humid3;
+String temp0;
+String temp1;
+String temp2;
+String temp3;
 
 // Create Amplitude Shift Keying Object
 RH_ASK rf_driver;
@@ -44,6 +52,8 @@ void setup()
     // Setup Serial Monitor
     Serial.begin(2000000);
 }
+
+
     
 void loop()
 {
@@ -70,21 +80,33 @@ void loop()
       break;
       }
     }
+      humid0 = str_humid[0];
+      humid1 = humid0 + str_humid[1];
+      humid2 = humid1 + str_humid[2];
+      humid3 = humid2 + str_humid[3];
+
+      temp0 = str_temp[0];
+      temp1 = temp0 + str_temp[1];
+      temp2 = temp1 + str_temp[2];
+      temp3 = temp2 + str_temp[3];
+      
       
       // Print values to Serial Monitor
-      Serial.print("Humidity: ");
-      Serial.print(str_humid);
+      /*Serial.print("Humidity: ");
+      Serial.print(humid1);    
       Serial.print("  - Temperature: ");
-      Serial.println(str_temp);
-      
-      // Print Humidity to OLED display
+      Serial.println(temp3);*/
+
+       // Print Humidity to OLED display
       oled.clear();
-      oled.set1X();
-      oled.print("Humidity: ");
-      oled.print(str_humid);
-      oled.println(" %");
-      oled.print("Temperature: ");
-      oled.print(str_temp);
-      oled.println(" C");
+      oled.print("Henk Oegema");
+      oled.set2X();
+      oled.setCursor(0,2);
+      oled.print("Humid:");
+      oled.print(humid1);
+      oled.setCursor(0,5);
+      oled.print("Temp:");
+      oled.print(temp3);
+      
     }
 }
