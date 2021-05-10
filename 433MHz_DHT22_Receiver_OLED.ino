@@ -93,7 +93,7 @@ void loop()
       
       // Print values to Serial Monitor
       /*Serial.print("Humidity: ");
-      Serial.print(humid1);    
+      Serial.print(humid3);    
       Serial.print("  - Temperature: ");
       Serial.println(temp3);*/
 
@@ -103,7 +103,7 @@ void loop()
       oled.set2X();
       oled.setCursor(0,2);
       oled.print("Humid:");
-      oled.print(humid1);
+      oled.print(humid3);
       oled.setCursor(0,5);
       oled.print("Temp:");
       oled.print(temp3);
